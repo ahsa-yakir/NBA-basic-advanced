@@ -1,0 +1,50 @@
+<!-- <mat-list>
+    <mat-list-item *ngFor="let player of products">
+      <mat-icon mat-list-icon>player</mat-icon>
+      <div mat-line>Name: {{player[2]}}</div>
+      <div mat-line>Team: {{player[3]}}</div>
+      <div mat-line>PPG: {{player[22]}}</div>
+    </mat-list-item>
+</mat-list> -->
+
+<table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+  <!-- Rank -->
+  <ng-container matColumnDef="rank">
+    <th mat-header-cell *matHeaderCellDef> Rank </th>
+    <td mat-cell *matCellDef="let products"> {{products[1]}} </td>
+  </ng-container>
+
+  <!-- Name -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let products"> {{products[2]}} </td>
+  </ng-container>
+
+  <!-- Team -->
+  <ng-container matColumnDef="team">
+    <th mat-header-cell *matHeaderCellDef> Team </th>
+    <td mat-cell *matCellDef="let products"> {{products[3]}} </td>
+  </ng-container>
+
+  <!-- Points -->
+  <ng-container matColumnDef="ppg">
+    <th mat-header-cell *matHeaderCellDef> PPG </th>
+    <td mat-cell *matCellDef="let products"> {{products[22]}} </td>
+  </ng-container>
+
+  <!-- Assists -->
+  <ng-container matColumnDef="ast">
+    <th mat-header-cell *matHeaderCellDef> AST </th>
+    <td mat-cell *matCellDef="let products"> {{products[18]}} </td>
+  </ng-container>
+
+  <!-- Rebounds -->
+  <ng-container matColumnDef="reb">
+    <th mat-header-cell *matHeaderCellDef> REB </th>
+    <td mat-cell *matCellDef="let products"> {{products[17]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
